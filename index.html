@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanda, me paga!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .fixed-button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .moving-button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: absolute;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            const button = document.querySelector('.moving-button');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Amanda, você vai me pagar os 20 conto?</h1>
+
+    <div class="buttons">
+        <a href="thanks.html">
+            <button class="fixed-button">Sim</button>
+        </a>
+        <button class="moving-button" onmouseover="moveButton()">Não</button>
+    </div>
+</body>
+</html>
